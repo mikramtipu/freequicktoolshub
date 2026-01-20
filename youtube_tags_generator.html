@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Tags Generator – QuickToolsHub</title>
+  <meta name="description" content="Free YouTube Tags Generator. Create SEO friendly tags for YouTube videos and Shorts." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="index.html" class="font-bold text-xl text-blue-600">
+        <i class="fas fa-tools mr-2"></i>QuickToolsHub
+      </a>
+      <a href="index.html" class="text-gray-600 hover:text-blue-600">← Back to Home</a>
+    </div>
+  </header>
+
+  <!-- Tool Section -->
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-center mb-4">YouTube Tags Generator</h1>
+    <p class="text-center text-gray-600 mb-8">Generate SEO friendly tags for YouTube videos & Shorts</p>
+
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <label class="block font-medium mb-2">Enter main keyword</label>
+      <input id="keyword" type="text" placeholder="e.g. sad song" class="w-full border px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+      <button onclick="generateTags()" class="w-full mt-4 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+        Generate Tags
+      </button>
+
+      <textarea id="result" class="w-full mt-4 h-40 border p-3 rounded-lg" placeholder="Generated tags will appear here..."></textarea>
+
+      <button onclick="copyTags()" class="w-full mt-3 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition">
+        Copy Tags
+      </button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 text-center py-6 mt-12">
+    <p>© 2025 QuickToolsHub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function generateTags() {
+      const keyword = document.getElementById('keyword').value.trim();
+      if (!keyword) {
+        alert('Please enter a keyword');
+        return;
+      }
+      const tags = [
+        keyword,
+        keyword + ' video',
+        keyword + ' youtube',
+        keyword + ' shorts',
+        keyword + ' viral',
+        keyword + ' trending',
+        'youtube shorts',
+        'viral video'
+      ];
+      document.getElementById('result').value = tags.join(', ');
+    }
+
+    function copyTags() {
+      const textarea = document.getElementById('result');
+      textarea.select();
+      document.execCommand('copy');
+      alert('Tags copied!');
+    }
+  </script>
+
+</body>
+</html>
