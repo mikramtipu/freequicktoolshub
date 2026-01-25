@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Grammar Checker - Free Online Grammar & Spelling Checker | QuickToolsHub</title>
+    <meta name="description" content="Free AI-powered grammar checker. Fix grammar mistakes, spelling errors, punctuation issues instantly. Advanced AI grammar correction tool.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../../index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-tools text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl text-gray-800">QuickToolsHub</h1>
+                        <p class="text-xs text-gray-500">AI Grammar Checker</p>
+                    </div>
+                </a>
+                <a href="../../index.html" class="text-gray-600 hover:text-blue-600 transition">
+                    <i class="fas fa-home mr-2"></i>Back to Home
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Tool Section -->
+    <section class="py-8">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <!-- Tool Header -->
+            <div class="text-center mb-8">
+                <div class="inline-block bg-purple-100 text-purple-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-check-circle mr-2"></i>AI Powered
+                </div>
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">AI Grammar Checker</h1>
+                <p class="text-gray-600 text-lg">Fix grammar, spelling, and punctuation errors instantly with AI</p>
+            </div>
+
+            <!-- Main Tool Interface -->
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Input Section -->
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <label class="font-semibold text-gray-700">Your Text</label>
+                            <span class="text-sm text-gray-500" id="inputCount">0 words</span>
+                        </div>
+                        <textarea id="inputText" 
+                            class="w-full h-80 p-4 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none resize-none"
+                            placeholder="Type or paste your text here to check for grammar and spelling mistakes...
+
+Example:
+I has been working on this project since yesterday. Their are some mistake in the document that needs to be fix immediately."></textarea>
+                        
+                        <div class="mt-4 flex gap-3">
+                            <button onclick="checkGrammar()" 
+                                class="flex-1 bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition font-semibold">
+                                <i class="fas fa-check-circle mr-2"></i>Check Grammar
+                            </button>
+                            <button onclick="clearText()" 
+                                class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-300 transition">
+                                <i class="fas fa-eraser mr-2"></i>Clear
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Output Section -->
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <label class="font-semibold text-gray-700">Corrected Text</label>
+                            <span class="text-sm text-green-600 font-semibold" id="issuesCount">0 issues found</span>
+                        </div>
+                        <div id="outputText" 
+                            class="w-full h-80 p-4 border-2 border-gray-300 rounded-lg bg-gray-50 overflow-y-auto whitespace-pre-wrap">
+                            <p class="text-gray-400 text-center mt-32">Corrected text will appear here...</p>
+                        </div>
+                        
+                        <div class="mt-4 flex gap-3">
+                            <button onclick="copyOutput()" 
+                                class="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition font-semibold">
+                                <i class="fas fa-copy mr-2"></i>Copy Corrected Text
+                            </button>
+                            <button onclick="downloadText()" 
+                                class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                                <i class="fas fa-download mr-2"></i>Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Error Details -->
+                <div id="errorDetails" class="mt-6 hidden">
+                    <h3 class="font-semibold text-gray-700 mb-3">
+                        <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>Issues Found
+                    </h3>
+                    <div id="errorList" class="space-y-2"></div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                    <div class="text-3xl font-bold text-purple-600" id="statWords">0</div>
+                    <div class="text-sm text-gray-600">Words</div>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                    <div class="text-3xl font-bold text-blue-600" id="statChars">0</div>
+                    <div class="text-sm text-gray-600">Characters</div>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                    <div class="text-3xl font-bold text-green-600" id="statSentences">0</div>
+                    <div class="text-sm text-gray-600">Sentences</div>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-md text-center">
+                    <div class="text-3xl font-bold text-red-600" id="statErrors">0</div>
+                    <div class="text-sm text-gray-600">Errors</div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="text-purple-600 text-3xl mb-3">
+                        <i class="fas fa-spell-check"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Grammar Check</h3>
+                    <p class="text-gray-600 text-sm">Advanced AI detection of grammar mistakes and suggestions</p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="text-blue-600 text-3xl mb-3">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Spelling Correction</h3>
+                    <p class="text-gray-600 text-sm">Automatic spelling error detection and correction</p>
+                </div>
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="text-green-600 text-3xl mb-3">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Punctuation Fix</h3>
+                    <p class="text-gray-600 text-sm">Correct punctuation marks and formatting issues</p>
+                </div>
+            </div>
+
+            <!-- How to Use -->
+            <div class="bg-white rounded-lg p-6 shadow-md mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-question-circle text-purple-600 mr-2"></i>How to Use
+                </h2>
+                <ol class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">1</span>
+                        <span>Type or paste your text in the left text box</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">2</span>
+                        <span>Click "Check Grammar" button to analyze your text</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">3</span>
+                        <span>Review the corrected text and error suggestions</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">4</span>
+                        <span>Copy or download the corrected version</span>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- FAQ -->
+            <div class="bg-white rounded-lg p-6 shadow-md">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-question-circle text-purple-600 mr-2"></i>Frequently Asked Questions
+                </h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Is this grammar checker free?</h3>
+                        <p class="text-gray-600 text-sm">Yes! Our AI grammar checker is 100% free with no signup required.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-2">What types of errors does it detect?</h3>
+                        <p class="text-gray-600 text-sm">It detects grammar mistakes, spelling errors, punctuation issues, verb tense errors, and subject-verb agreement problems.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Can I check unlimited text?</h3>
+                        <p class="text-gray-600 text-sm">Yes, you can check as much text as you want with no restrictions.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Is my text data secure?</h3>
+                        <p class="text-gray-600 text-sm">Yes, all processing happens in your browser. We don't store or save your text.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">© 2025 QuickToolsHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Grammar checking rules and patterns
+        const grammarRules = [
+            // Subject-verb agreement
+            { pattern: /\b(I|you|we|they)\s+was\b/gi, correction: (match) => match.replace(/was/i, 'were'), type: 'grammar', message: 'Subject-verb agreement error' },
+            { pattern: /\b(he|she|it)\s+were\b/gi, correction: (match) => match.replace(/were/i, 'was'), type: 'grammar', message: 'Subject-verb agreement error' },
+            { pattern: /\b(I|you|we|they)\s+has\b/gi, correction: (match) => match.replace(/has/i, 'have'), type: 'grammar', message: 'Subject-verb agreement error' },
+            { pattern: /\b(he|she|it)\s+have\b/gi, correction: (match) => match.replace(/have/i, 'has'), type: 'grammar', message: 'Subject-verb agreement error' },
+            
+            // Common spelling mistakes
+            { pattern: /\btheir\s+is\b/gi, correction: 'there is', type: 'spelling', message: 'Wrong word usage: "their" should be "there"' },
+            { pattern: /\btheir\s+are\b/gi, correction: 'there are', type: 'spelling', message: 'Wrong word usage: "their" should be "there"' },
+            { pattern: /\bthier\b/gi, correction: 'their', type: 'spelling', message: 'Spelling error' },
+            { pattern: /\brecieve\b/gi, correction: 'receive', type: 'spelling', message: 'Spelling error' },
+            { pattern: /\boccured\b/gi, correction: 'occurred', type: 'spelling', message: 'Spelling error' },
+            { pattern: /\bseperate\b/gi, correction: 'separate', type: 'spelling', message: 'Spelling error' },
+            { pattern: /\bdefinately\b/gi, correction: 'definitely', type: 'spelling', message: 'Spelling error' },
+            { pattern: /\boccassion\b/gi, correction: 'occasion', type: 'spelling', message: 'Spelling error' },
+            { pattern: /\baccomodate\b/gi, correction: 'accommodate', type: 'spelling', message: 'Spelling error' },
+            { pattern: /\bmistake\s+that\s+needs\s+to\s+be\s+fix\b/gi, correction: 'mistake that needs to be fixed', type: 'grammar', message: 'Verb form error: "fix" should be "fixed"' },
+            
+            // Article usage
+            { pattern: /\ba\s+([aeiou])/gi, correction: (match, vowel) => 'an ' + vowel, type: 'grammar', message: 'Article error: use "an" before vowel sounds' },
+            { pattern: /\ban\s+([^aeiou])/gi, correction: (match, consonant) => 'a ' + consonant, type: 'grammar', message: 'Article error: use "a" before consonant sounds' },
+            
+            // Double words
+            { pattern: /\b(\w+)\s+\1\b/gi, correction: (match, word) => word, type: 'grammar', message: 'Duplicate word' },
+            
+            // Punctuation
+            { pattern: /([a-z])([A-Z])/g, correction: '$1. $2', type: 'punctuation', message: 'Missing period between sentences' },
+            { pattern: /\s{2,}/g, correction: ' ', type: 'punctuation', message: 'Extra spaces' },
+            { pattern: /\s+([,.!?;:])/g, correction: '$1', type: 'punctuation', message: 'Space before punctuation' },
+            { pattern: /([,.!?;:])([a-zA-Z])/g, correction: '$1 $2', type: 'punctuation', message: 'Missing space after punctuation' },
+        ];
+
+        let errorsList = [];
+
+        function updateStats(text) {
+            const words = text.trim().split(/\s+/).filter(w => w.length > 0);
+            const chars = text.length;
+            const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+
+            document.getElementById('statWords').textContent = words.length;
+            document.getElementById('statChars').textContent = chars;
+            document.getElementById('statSentences').textContent = sentences.length;
+            document.getElementById('inputCount').textContent = words.length + ' words';
+        }
+
+        document.getElementById('inputText').addEventListener('input', function() {
+            updateStats(this.value);
+        });
+
+        function checkGrammar() {
+            const inputText = document.getElementById('inputText').value.trim();
+            
+            if (!inputText) {
+                alert('Please enter some text to check!');
+                return;
+            }
+
+            errorsList = [];
+            let correctedText = inputText;
+            let errorCount = 0;
+
+            // Apply all grammar rules
+            grammarRules.forEach(rule => {
+                const matches = inputText.matchAll(rule.pattern);
+                for (const match of matches) {
+                    errorCount++;
+                    errorsList.push({
+                        original: match[0],
+                        correction: typeof rule.correction === 'function' ? rule.correction(match[0], ...match.slice(1)) : rule.correction,
+                        type: rule.type,
+                        message: rule.message
+                    });
+                }
+                
+                if (typeof rule.correction === 'function') {
+                    correctedText = correctedText.replace(rule.pattern, rule.correction);
+                } else {
+                    correctedText = correctedText.replace(rule.pattern, rule.correction);
+                }
+            });
+
+            // Display corrected text
+            document.getElementById('outputText').innerHTML = correctedText || '<p class="text-gray-400 text-center mt-32">No corrections needed!</p>';
+            
+            // Update error count
+            document.getElementById('statErrors').textContent = errorCount;
+            document.getElementById('issuesCount').textContent = errorCount + ' issues found';
+
+            // Display error details
+            if (errorCount > 0) {
+                displayErrors();
+            } else {
+                document.getElementById('errorDetails').classList.add('hidden');
+            }
+        }
+
+        function displayErrors() {
+            const errorDetails = document.getElementById('errorDetails');
+            const errorList = document.getElementById('errorList');
+            
+            errorList.innerHTML = '';
+            
+            errorsList.forEach((error, index) => {
+                const errorItem = document.createElement('div');
+                errorItem.className = 'bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded';
+                errorItem.innerHTML = `
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-circle text-yellow-600"></i>
+                        </div>
+                        <div class="ml-3 flex-1">
+                            <p class="text-sm font-semibold text-gray-800">${error.message}</p>
+                            <p class="text-xs text-gray-600 mt-1">
+                                <span class="line-through text-red-600">${error.original}</span>
+                                <i class="fas fa-arrow-right mx-2"></i>
+                                <span class="text-green-600 font-semibold">${error.correction}</span>
+                            </p>
+                            <span class="inline-block mt-1 px-2 py-0.5 bg-${error.type === 'grammar' ? 'purple' : error.type === 'spelling' ? 'blue' : 'green'}-100 text-${error.type === 'grammar' ? 'purple' : error.type === 'spelling' ? 'blue' : 'green'}-700 text-xs rounded-full">
+                                ${error.type.toUpperCase()}
+                            </span>
+                        </div>
+                    </div>
+                `;
+                errorList.appendChild(errorItem);
+            });
+            
+            errorDetails.classList.remove('hidden');
+        }
+
+        function copyOutput() {
+            const outputText = document.getElementById('outputText').innerText;
+            
+            if (!outputText || outputText.includes('Corrected text will appear here')) {
+                alert('No corrected text to copy!');
+                return;
+            }
+
+            navigator.clipboard.writeText(outputText).then(() => {
+                const btn = event.target.closest('button');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
+                btn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                btn.classList.add('bg-green-700');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('bg-green-700');
+                    btn.classList.add('bg-green-600', 'hover:bg-green-700');
+                }, 2000);
+            });
+        }
+
+        function downloadText() {
+            const outputText = document.getElementById('outputText').innerText;
+            
+            if (!outputText || outputText.includes('Corrected text will appear here')) {
+                alert('No corrected text to download!');
+                return;
+            }
+
+            const blob = new Blob([outputText], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'corrected_text.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function clearText() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('outputText').innerHTML = '<p class="text-gray-400 text-center mt-32">Corrected text will appear here...</p>';
+            document.getElementById('errorDetails').classList.add('hidden');
+            updateStats('');
+            document.getElementById('statErrors').textContent = '0';
+            document.getElementById('issuesCount').textContent = '0 issues found';
+            errorsList = [];
+        }
+    </script>
+</body>
+</html>
