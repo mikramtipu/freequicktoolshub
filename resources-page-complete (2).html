@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resources & Downloads - Study Materials, Templates & More | QuickToolsHub</title>
+    <meta name="description" content="Free downloadable resources: study notes, past papers, resume templates, certificates, and more for Pakistani students.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-tools text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl text-gray-800">QuickToolsHub</h1>
+                        <p class="text-xs text-gray-500">Free Resources</p>
+                    </div>
+                </a>
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition">
+                    <i class="fas fa-home mr-2"></i>Back to Home
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-green-600 via-teal-600 to-blue-600 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-4">
+                <i class="fas fa-download text-6xl mb-4 animate-bounce"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">📚 Free Resources & Downloads</h1>
+            <p class="text-xl mb-8">Study Materials, Templates, Past Papers & More - All 100% FREE!</p>
+            <div class="max-w-2xl mx-auto">
+                <input type="text" id="searchResources" placeholder="Search resources..." 
+                    class="w-full px-6 py-4 rounded-lg text-gray-800 text-lg focus:outline-none focus:ring-4 focus:ring-green-300 shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600">500+</div>
+                    <div class="text-sm text-gray-600">Study Materials</div>
+                </div>
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                    <div class="text-3xl font-bold text-green-600">200+</div>
+                    <div class="text-sm text-gray-600">Templates</div>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-lg">
+                    <div class="text-3xl font-bold text-purple-600">100+</div>
+                    <div class="text-sm text-gray-600">Past Papers</div>
+                </div>
+                <div class="text-center p-4 bg-orange-50 rounded-lg">
+                    <div class="text-3xl font-bold text-orange-600">50+</div>
+                    <div class="text-sm text-gray-600">Design Assets</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="bg-white shadow-sm py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button onclick="filterResources('all')" class="res-btn active px-6 py-2 rounded-lg font-medium transition">
+                    <i class="fas fa-home mr-2"></i>All Resources
+                </button>
+                <button onclick="filterResources('study')" class="res-btn px-6 py-2 rounded-lg font-medium transition">
+                    <i class="fas fa-graduation-cap mr-2"></i>Study Materials
+                </button>
+                <button onclick="filterResources('design')" class="res-btn px-6 py-2 rounded-lg font-medium transition">
+                    <i class="fas fa-palette mr-2"></i>Design Resources
+                </button>
+                <button onclick="filterResources('writing')" class="res-btn px-6 py-2 rounded-lg font-medium transition">
+                    <i class="fas fa-pen mr-2"></i>Writing Templates
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Grid -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            
+            <!-- STUDY MATERIALS SECTION -->
+            <div class="mb-16">
+                <div class="flex items-center mb-6">
+                    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        <span class="font-bold text-xl">📚 Study Materials</span>
+                        <span class="ml-2 bg-white/20 px-2 py-1 rounded text-sm">Pakistan Focus</span>
+                    </div>
+                    <div class="flex-grow h-1 bg-blue-200 ml-4 rounded"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Matric Notes -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-blue-200" data-category="study">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i class="fas fa-book text-blue-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">FREE PDF</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Matric (9th-10th) Notes</h3>
+                        <p class="text-gray-600 text-sm mb-4">Complete notes for all subjects - Physics, Chemistry, Biology, Math</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-pdf mr-1"></i>PDF Format</span>
+                            <span><i class="fas fa-download mr-1"></i>5.2k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('matric-notes')" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                    <!-- FSc Notes -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-blue-200" data-category="study">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i class="fas fa-atom text-blue-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">FSc Physics Notes (Part 1 & 2)</h3>
+                        <p class="text-gray-600 text-sm mb-4">Complete FSc Physics notes with solved exercises and numerical</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-pdf mr-1"></i>PDF Format</span>
+                            <span><i class="fas fa-download mr-1"></i>8.7k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('fsc-physics')" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                    <!-- Past Papers -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-blue-200" data-category="study">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i class="fas fa-file-alt text-blue-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">HOT</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Board Past Papers 2020-2024</h3>
+                        <p class="text-gray-600 text-sm mb-4">5 years past papers - Federal & All Provincial Boards</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-pdf mr-1"></i>PDF Format</span>
+                            <span><i class="fas fa-download mr-1"></i>12.3k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('past-papers')" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                    <!-- Formula Sheets -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-blue-200" data-category="study">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i class="fas fa-calculator text-blue-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">FREE</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Formula Sheets - Math & Physics</h3>
+                        <p class="text-gray-600 text-sm mb-4">All important formulas in one place for quick revision</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-pdf mr-1"></i>PDF Format</span>
+                            <span><i class="fas fa-download mr-1"></i>6.1k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('formula-sheets')" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                    <!-- Study Planner -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-blue-200" data-category="study">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i class="fas fa-calendar-check text-blue-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">NEW</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Study Planner & Timetable</h3>
+                        <p class="text-gray-600 text-sm mb-4">Printable study planner to organize your exam preparation</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-pdf mr-1"></i>PDF Format</span>
+                            <span><i class="fas fa-download mr-1"></i>3.2k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('study-planner')" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- DESIGN RESOURCES SECTION -->
+            <div class="mb-16">
+                <div class="flex items-center mb-6">
+                    <div class="bg-gradient-to-r from-pink-600 to-purple-600 text-white px-6 py-3 rounded-lg">
+                        <i class="fas fa-palette mr-2"></i>
+                        <span class="font-bold text-xl">🎨 Design Resources</span>
+                        <span class="ml-2 bg-white/20 px-2 py-1 rounded text-sm">Free Assets</span>
+                    </div>
+                    <div class="flex-grow h-1 bg-pink-200 ml-4 rounded"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Icon Pack -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-pink-200" data-category="design">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-pink-100 p-3 rounded-lg">
+                                <i class="fas fa-icons text-pink-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">500+ Icons</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Free Icon Pack (SVG)</h3>
+                        <p class="text-gray-600 text-sm mb-4">500+ high-quality icons for web & mobile design</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-archive mr-1"></i>ZIP Format</span>
+                            <span><i class="fas fa-download mr-1"></i>4.5k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('icon-pack')" class="w-full bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                    <!-- Social Media Templates -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-pink-200" data-category="design">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-pink-100 p-3 rounded-lg">
+                                <i class="fas fa-mobile-alt text-pink-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">HOT</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Social Media Post Templates</h3>
+                        <p class="text-gray-600 text-sm mb-4">50+ ready-to-use templates for Instagram, Facebook, Twitter</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-image mr-1"></i>PSD + PNG</span>
+                            <span><i class="fas fa-download mr-1"></i>7.8k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('social-templates')" class="w-full bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                    <!-- Resume Templates -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-pink-200" data-category="design">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-pink-100 p-3 rounded-lg">
+                                <i class="fas fa-file-invoice text-pink-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Professional Resume Templates</h3>
+                        <p class="text-gray-600 text-sm mb-4">10 modern resume templates in Word & PDF format</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-word mr-1"></i>DOCX + PDF</span>
+                            <span><i class="fas fa-download mr-1"></i>9.2k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('resume-templates')" class="w-full bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                    <!-- Certificate Templates -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-pink-200" data-category="design">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-pink-100 p-3 rounded-lg">
+                                <i class="fas fa-certificate text-pink-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">FREE</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Certificate Templates</h3>
+                        <p class="text-gray-600 text-sm mb-4">Customizable certificate templates for various purposes</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-pdf mr-1"></i>PDF + PSD</span>
+                            <span><i class="fas fa-download mr-1"></i>5.6k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('certificates')" class="w-full bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- WRITING RESOURCES SECTION -->
+            <div class="mb-16">
+                <div class="flex items-center mb-6">
+                    <div class="bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-3 rounded-lg">
+                        <i class="fas fa-pen mr-2"></i>
+                        <span class="font-bold text-xl">📝 Writing Resources</span>
+                        <span class="ml-2 bg-white/20 px-2 py-1 rounded text-sm">Templates</span>
+                    </div>
+                    <div class="flex-grow h-1 bg-green-200 ml-4 rounded"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Essay Templates -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-green-200" data-category="writing">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-green-100 p-3 rounded-lg">
+                                <i class="fas fa-file-alt text-green-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">FREE</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Essay Writing Templates</h3>
+                        <p class="text-gray-600 text-sm mb-4">Structured templates for different types of essays</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-word mr-1"></i>DOCX Format</span>
+                            <span><i class="fas fa-download mr-1"></i>4.1k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('essay-templates')" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                    <!-- Email Templates -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-green-200" data-category="writing">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-green-100 p-3 rounded-lg">
+                                <i class="fas fa-envelope text-green-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">BUSINESS</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Professional Email Templates</h3>
+                        <p class="text-gray-600 text-sm mb-4">50+ email templates for business & professional use</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-word mr-1"></i>DOCX Format</span>
+                            <span><i class="fas fa-download mr-1"></i>6.3k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('email-templates')" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                    <!-- Letter Formats -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-green-200" data-category="writing">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-green-100 p-3 rounded-lg">
+                                <i class="fas fa-file-signature text-green-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">OFFICIAL</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Official Letter Formats</h3>
+                        <p class="text-gray-600 text-sm mb-4">Application, complaint, and formal letter templates</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-word mr-1"></i>DOCX Format</span>
+                            <span><i class="fas fa-download mr-1"></i>5.7k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('letter-formats')" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                    <!-- Assignment Format -->
+                    <div class="resource-card bg-white rounded-lg shadow-md hover:shadow-xl transition p-6 border-2 border-green-200" data-category="writing">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="bg-green-100 p-3 rounded-lg">
+                                <i class="fas fa-graduation-cap text-green-600 text-2xl"></i>
+                            </div>
+                            <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">STUDENT</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Assignment Writing Formats</h3>
+                        <p class="text-gray-600 text-sm mb-4">University & college assignment templates with proper formatting</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-file-word mr-1"></i>DOCX Format</span>
+                            <span><i class="fas fa-download mr-1"></i>8.4k downloads</span>
+                        </div>
+                        <button onclick="downloadResource('assignment-formats')" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-medium">
+                            <i class="fas fa-download mr-2"></i>Download Now
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Download Modal -->
+    <div id="downloadModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-8 text-center">
+            <div class="mb-6">
+                <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-green-600 text-4xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Download Starting...</h3>
+                <p class="text-gray-600">Your resource is being prepared for download!</p>
+            </div>
+            <div class="space-y-3">
+                <button onclick="closeDownloadModal()" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium">
+                    <i class="fas fa-times mr-2"></i>Close
+                </button>
+                <p class="text-sm text-gray-500">If download doesn't start automatically, <a href="#" class="text-blue-600 hover:underline">click here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2025 QuickToolsHub. All rights reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">
+                <a href="index.html" class="hover:text-white transition">Home</a> | 
+                <a href="blog.html" class="hover:text-white transition">Blog</a> | 
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        document.getElementById('searchResources').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const resources = document.querySelectorAll('.resource-card');
+            
+            resources.forEach(resource => {
+                const title = resource.querySelector('h3').textContent.toLowerCase();
+                const desc = resource.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || desc.includes(searchTerm)) {
+                    resource.style.display = 'block';
+                } else {
+                    resource.style.display = 'none';
+                }
+            });
+        });
+
+        // Category filter
+        function filterResources(category) {
+            const resources = document.querySelectorAll('.resource-card');
+            const buttons = document.quer
