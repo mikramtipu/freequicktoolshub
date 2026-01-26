@@ -63,7 +63,7 @@
                     <i id="toolIcon" class="fas fa-robot mr-2"></i>
                     <span id="toolCategory">AI Tools</span>
                 </div>
-                <h1 id="mainToolTitle" class="text-4xl md:text-5xl font-bold mb-4">PDF TO WORD</h1>
+                <h1 id="mainToolTitle" class="text-4xl md:text-5xl font-bold mb-4">PDF/Image to Word Converter</h1>
                 <p id="toolDescription" class="text-xl opacity-90 mb-6">PDF to Word Converter (Urdu & English)
 Yeh free online tool PDF aur images ko editable Microsoft Word file mein convert karta hai. Is tool mein Urdu aur English OCR support maujood hai aur koi software install karne ki zarurat nahi.</p>
                 <div class="flex flex-wrap justify-center gap-3 text-sm">
@@ -75,69 +75,139 @@ Yeh free online tool PDF aur images ko editable Microsoft Word file mein convert
         </div>
     </section>
 
-    <!-- Tool Interface -->
-    <section class="py-12">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
-                    <!-- Tool content will be inserted here -->
-                    <div id="toolInterface">
-                        <!-- Example Interface -->
-                        <div class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    <i class="fas fa-keyboard mr-2"></i>Input
-                                </label>
-                                <textarea id="inputText" rows="8" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none resize-none" placeholder="Enter your text here..."></textarea>
-                                <div class="flex justify-between items-center mt-2 text-sm text-gray-500">
-                                    <span id="charCount">0 characters</span>
-                                    <button onclick="clearInput()" class="text-red-500 hover:text-red-600">
-                                        <i class="fas fa-trash mr-1"></i>Clear
-                                    </button>
-                                </div>
-                            </div>
+      <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-2xl p-8 mb-8 text-center">
+            <h1 class="text-4xl font-bold mb-3">
+                <i class="fas fa-file-word mr-3"></i>PDF/Image to Word Converter
+            </h1>
+            <p class="text-xl mb-2">English & Urdu - Direct Word Document mein convert karein!</p>
+            <p class="text-sm opacity-90">انگلش اور اردو دونوں زبانوں کے لیے</p>
+        </div>
 
-                            <div class="flex gap-3">
-                                <button onclick="processTool()" class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition">
-                                    <i class="fas fa-magic mr-2"></i>Generate Result
-                                </button>
-                                <button onclick="copyResult()" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </div>
-
-                            <div id="resultSection" class="hidden">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
-                                    <i class="fas fa-check-circle text-green-600 mr-2"></i>Result
-                                </label>
-                                <div id="outputText" class="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-lg min-h-[200px]"></div>
-                            </div>
+        <!-- Upload Section -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800 text-center">
+                <i class="fas fa-cloud-upload-alt mr-2 text-blue-600"></i>Upload Method Choose Karein
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Method 1: File Upload -->
+                <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">
+                        <i class="fas fa-folder-open mr-2"></i>Method 1: Upload File
+                    </h3>
+                    <label for="fileInput" class="block">
+                        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg cursor-pointer hover:shadow-xl transition text-center font-bold">
+                            <i class="fas fa-upload mr-2"></i>Select File
+                        </div>
+                    </label>
+                    <input type="file" id="fileInput" accept=".pdf,.png,.jpg,.jpeg" class="hidden">
+                    <p class="text-sm text-gray-500 mt-3 text-center">PDF, PNG, JPG, JPEG supported</p>
+                </div>
+                
+                <!-- Method 2: Paste -->
+                <div class="border-2 border-gray-200 rounded-xl p-6 hover:border-green-500 hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold text-green-600 mb-4">
+                        <i class="fas fa-clipboard mr-2"></i>Method 2: Paste (Ctrl+V)
+                    </h3>
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 border-2 border-dashed border-green-400 rounded-lg p-8 text-center min-h-[120px] flex items-center justify-center">
+                        <div>
+                            <i class="fas fa-keyboard text-4xl text-green-600 mb-2"></i>
+                            <p class="text-green-700 font-bold">Is page par kahin bhi<br>Ctrl+V press karein</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- How to Use -->
-                <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 mt-6">
-                    <h2 class="text-2xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-question-circle text-blue-600 mr-3"></i>
-                        How to Use This Tool?
-                    </h2>
-                    <ol class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">1</span>
-                            <span>Enter your text in the input box above</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">2</span>
-                            <span>Click the "Generate Result" button</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm mr-3 mt-0.5 flex-shrink-0">3</span>
-                            <span>View and copy your results instantly</span>
-                        </li>
-                    </ol>
+            <!-- Tips Section -->
+            <div class="bg-yellow-50 border-2 border-yellow-300 rounded-xl p-6 mt-6">
+                <h4 class="font-bold text-yellow-800 mb-3 flex items-center">
+                    <i class="fas fa-lightbulb mr-2 text-yellow-600"></i>Quick Tips:
+                </h4>
+                <ul class="space-y-2 text-sm text-yellow-900">
+                    <li><strong>💡 Screenshot:</strong> Lene ke baad directly Ctrl+V press kar dein!</li>
+                    <li><strong>🌍 Language Support:</strong> English + Urdu (اردو) دونوں supported ہیں</li>
+                    <li><strong>📸 Urdu Ke Liye:</strong> Clear aur high resolution image use karein</li>
+                    <li><strong>✨ Formatting:</strong> PDF ki original formatting maintain hogi - line breaks aur paragraphs bilkul waise hi!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- File Info -->
+        <div id="fileInfo" class="hidden bg-blue-50 border-2 border-blue-300 rounded-xl p-4 mb-6">
+            <p class="text-blue-900 font-semibold">
+                <i class="fas fa-file mr-2"></i>File: <span id="fileName"></span>
+            </p>
+        </div>
+
+        <!-- Processing Section -->
+        <div id="processing" class="hidden bg-white rounded-2xl shadow-lg p-8 mb-8 text-center">
+            <div class="spinner mb-4"></div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                <i class="fas fa-cog fa-spin mr-2 text-blue-600"></i>Processing...
+            </h3>
+            <p class="text-gray-600 mb-4">Text extract ho raha hai, please wait...</p>
+            <div class="bg-gray-200 h-8 rounded-full overflow-hidden">
+                <div id="progressFill" class="bg-gradient-to-r from-blue-600 to-purple-600 h-full flex items-center justify-center text-white font-bold transition-all duration-300" style="width: 0%">
+                    0%
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Preview Box -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">
+                        <i class="fas fa-image mr-2 text-purple-600"></i>Original Image/PDF
+                    </h3>
+                    <div class="border-2 border-gray-200 rounded-lg overflow-hidden">
+                        <img id="previewImg" class="w-full h-auto max-h-96 object-contain" alt="Preview">
+                    </div>
                 </div>
 
+                <!-- Text Box -->
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">
+                        <i class="fas fa-font mr-2 text-green-600"></i>Extracted Text
+                    </h3>
+                    <textarea id="extractedText" class="w-full h-96 p-4 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none urdu-text resize-none" placeholder="Extracted text will appear here..."></textarea>
+                    
+                    <!-- Action Buttons -->
+                    <div class="space-y-3 mt-4">
+                        <button onclick="downloadWordDoc()" class="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-4 px-6 rounded-lg font-bold text-lg hover:shadow-xl transition">
+                            <i class="fas fa-file-word mr-2"></i>Download Word Document (.doc)
+                        </button>
+                        <button onclick="copyText()" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-bold hover:shadow-xl transition">
+                            <i class="fas fa-copy mr-2"></i>Copy Text
+                        </button>
+                    </div>
+
+                    <div class="bg-green-50 border border-green-300 rounded-lg p-3 mt-4 text-center text-sm">
+                        <p class="text-green-800">
+                            <i class="fas fa-check-circle mr-1"></i>
+                            Word Document button se proper .doc file download hogi jo Microsoft Word mein khulegi
+                        </p>
+                        <p class="text-green-800 mt-1">
+                            <i class="fas fa-bullseye mr-1"></i>
+                            Original PDF ki formatting maintain rahegi!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">
+                <i class="fas fa-tools mr-2"></i>QuickToolsHub - Free Online Tools
+            </p>
+            <p class="text-sm text-gray-400">© 2025 QuickToolsHub. All rights reserved.</p>
+        </div>
                 <!-- Features -->
                 <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 mt-6">
                     <h2 class="text-2xl font-bold mb-6 flex items-center">
