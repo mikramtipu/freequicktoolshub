@@ -1,0 +1,69 @@
+# ===================================
+# QuickToolsHub - .gitignore
+# ===================================
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor/IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Log Files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Node Modules (if using npm/node in future)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build/Dist Folders
+dist/
+build/
+out/
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+
+# Backup Files
+*.bak
+*.backup
+*~
+
+# Cache Files
+.cache/
+*.cache
+
+# Test Coverage
+coverage/
+.nyc_output/
+
+# Misc
+*.zip
+*.rar
+*.7z
+*.tar.gz

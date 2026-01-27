@@ -1,0 +1,284 @@
+{
+  "tools": [
+    {
+      "name": "AI Content Writer",
+      "icon": "fa-pen-fancy",
+      "color": "blue",
+      "category": "ai",
+      "badge": "HOT",
+      "url": "tools/ai/content-writer.html"
+    },
+    {
+      "name": "Grammar Checker",
+      "icon": "fa-check-circle",
+      "color": "green",
+      "category": "ai",
+      "url": "tools/ai/grammar-checker.html"
+    },
+    {
+      "name": "AI Image Generator",
+      "icon": "fa-image",
+      "color": "purple",
+      "category": "ai",
+      "badge": "NEW",
+      "url": "tools/ai/image-generator.html"
+    },
+    {
+      "name": "Plagiarism Checker",
+      "icon": "fa-search",
+      "color": "red",
+      "category": "ai",
+      "url": "tools/ai/plagiarism-checker.html"
+    },
+    {
+      "name": "Word Counter",
+      "icon": "fa-file-word",
+      "color": "blue",
+      "category": "ai",
+      "url": "tools/ai/word-counter.html"
+    },
+    {
+      "name": "Headline Generator",
+      "icon": "fa-heading",
+      "color": "orange",
+      "category": "ai",
+      "url": "tools/ai/headline-generator.html"
+    },
+    {
+      "name": "Email Writer",
+      "icon": "fa-envelope",
+      "color": "teal",
+      "category": "ai",
+      "url": "tools/ai/email-writer.html"
+    },
+    {
+      "name": "Story Generator",
+      "icon": "fa-book",
+      "color": "pink",
+      "category": "ai",
+      "url": "tools/ai/story-generator.html"
+    },
+    {
+      "name": "Product Description Generator",
+      "icon": "fa-shopping-cart",
+      "color": "green",
+      "category": "ai",
+      "url": "tools/ai/product-description.html"
+    },
+    {
+      "name": "Slogan Generator",
+      "icon": "fa-lightbulb",
+      "color": "yellow",
+      "category": "ai",
+      "badge": "POPULAR",
+      "url": "tools/ai/slogan-generator.html"
+    },
+    {
+      "name": "Meta Description Generator",
+      "icon": "fa-code",
+      "color": "indigo",
+      "category": "seo",
+      "badge": "POPULAR",
+      "url": "tools/seo/meta-description.html"
+    },
+    {
+      "name": "Backlink Checker",
+      "icon": "fa-link",
+      "color": "blue",
+      "category": "seo",
+      "url": "tools/seo/backlink-checker.html"
+    },
+    {
+      "name": "Domain Authority Checker",
+      "icon": "fa-globe",
+      "color": "teal",
+      "category": "seo",
+      "url": "tools/seo/domain-authority.html"
+    },
+    {
+      "name": "XML Sitemap Validator",
+      "icon": "fa-sitemap",
+      "color": "purple",
+      "category": "seo",
+      "url": "tools/seo/sitemap-validator.html"
+    },
+    {
+      "name": "Schema Markup Generator",
+      "icon": "fa-code",
+      "color": "blue",
+      "category": "seo",
+      "url": "tools/seo/schema-generator.html"
+    },
+    {
+      "name": "Instagram Caption Generator",
+      "icon": "fa-instagram",
+      "color": "pink",
+      "category": "social",
+      "badge": "HOT",
+      "fab": true,
+      "url": "tools/social/insta-caption.html"
+    },
+    {
+      "name": "Tweet Generator",
+      "icon": "fa-twitter",
+      "color": "blue",
+      "category": "social",
+      "fab": true,
+      "url": "tools/social/tweet-generator.html"
+    },
+    {
+      "name": "YouTube Thumbnail Downloader",
+      "icon": "fa-youtube",
+      "color": "red",
+      "category": "social",
+      "fab": true,
+      "url": "tools/social/yt-thumbnail.html"
+    },
+    {
+      "name": "Paragraph Generator",
+      "icon": "fa-paragraph",
+      "color": "purple",
+      "category": "student",
+      "url": "tools/student/paragraph-generator.html"
+    },
+    {
+      "name": "Thesis Statement Generator",
+      "icon": "fa-graduation-cap",
+      "color": "blue",
+      "category": "student",
+      "url": "tools/student/thesis-generator.html"
+    },
+    {
+      "name": "Citation Generator",
+      "icon": "fa-quote-right",
+      "color": "indigo",
+      "category": "student",
+      "url": "tools/student/citation-generator.html"
+    },
+    {
+      "name": "Flashcard Maker",
+      "icon": "fa-clone",
+      "color": "yellow",
+      "category": "student",
+      "url": "tools/student/flashcard-maker.html"
+    },
+    {
+      "name": "QR Code Generator",
+      "icon": "fa-qrcode",
+      "color": "blue",
+      "category": "utility",
+      "badge": "POPULAR",
+      "url": "tools/utility/qr-generator.html"
+    },
+    {
+      "name": "Password Generator",
+      "icon": "fa-key",
+      "color": "red",
+      "category": "utility",
+      "url": "tools/utility/password-generator.html"
+    },
+    {
+      "name": "Case Converter",
+      "icon": "fa-text-height",
+      "color": "teal",
+      "category": "utility",
+      "badge": "NEW",
+      "url": "tools/utility/case-converter.html"
+    },
+    {
+      "name": "PDF to Word Converter",
+      "icon": "fa-file-word",
+      "color": "blue",
+      "category": "utility",
+      "badge": "HOT",
+      "url": "tools/utility/pdf-to-word.html"
+    },
+    {
+      "name": "Background Remover",
+      "icon": "fa-cut",
+      "color": "purple",
+      "category": "design",
+      "badge": "HOT",
+      "url": "tools/design/background-remover.html"
+    },
+    {
+      "name": "Image Resizer",
+      "icon": "fa-expand",
+      "color": "blue",
+      "category": "design",
+      "url": "tools/design/image-resizer.html"
+    },
+    {
+      "name": "Meme Generator",
+      "icon": "fa-laugh",
+      "color": "yellow",
+      "category": "design",
+      "url": "tools/design/meme-generator.html"
+    },
+    {
+      "name": "Screenshot Tool",
+      "icon": "fa-camera",
+      "color": "gray",
+      "category": "design",
+      "url": "tools/design/screenshot-tool.html"
+    },
+    {
+      "name": "Favicon Generator",
+      "icon": "fa-icons",
+      "color": "indigo",
+      "category": "design",
+      "url": "tools/design/favicon-generator.html"
+    },
+    {
+      "name": "HTML Minifier",
+      "icon": "fa-compress-arrows-alt",
+      "color": "orange",
+      "category": "webdev",
+      "url": "tools/webdev/html-minifier.html"
+    },
+    {
+      "name": "CSS Minifier",
+      "icon": "fa-file-code",
+      "color": "blue",
+      "category": "webdev",
+      "url": "tools/webdev/css-minifier.html"
+    },
+    {
+      "name": "JavaScript Minifier",
+      "icon": "fa-js",
+      "color": "yellow",
+      "category": "webdev",
+      "fab": true,
+      "url": "tools/webdev/js-minifier.html"
+    },
+    {
+      "name": "Meta Tag Generator",
+      "icon": "fa-tags",
+      "color": "green",
+      "category": "webdev",
+      "url": "tools/webdev/meta-tag-generator.html"
+    },
+    {
+      "name": "Open Graph Generator",
+      "icon": "fa-share-alt",
+      "color": "blue",
+      "category": "webdev",
+      "url": "tools/webdev/og-generator.html"
+    },
+    {
+      "name": "Text to Speech",
+      "icon": "fa-volume-up",
+      "color": "green",
+      "category": "utility",
+      "badge": "HOT",
+      "url": "tools/utility/text-to-speech.html"
+    },
+    {
+      "name": "Reverse Text Generator",
+      "icon": "fa-undo",
+      "color": "purple",
+      "category": "utility",
+      "url": "tools/utility/reverse-text.html"
+    }
+  ]
+}

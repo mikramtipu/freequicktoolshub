@@ -1,0 +1,117 @@
+/* ===================================
+   QuickToolsHub Stylesheet
+   Version: 1.0
+   =================================== */
+
+/* Category Button Styles */
+.category-btn.active {
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    color: white;
+}
+
+.category-btn:not(.active) {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.category-btn:not(.active):hover {
+    background-color: #e5e7eb;
+}
+
+/* Tool Card Styles */
+.tool-card {
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #2563eb, #9333ea);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #1d4ed8, #7c3aed);
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus Styles for Accessibility */
+button:focus,
+a:focus,
+input:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tool-card {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    header,
+    footer,
+    .category-btn {
+        display: none;
+    }
+}
+
+/* Utility Classes */
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hero Section Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
