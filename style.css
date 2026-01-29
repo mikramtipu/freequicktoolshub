@@ -1,33 +1,27 @@
 /* ===================================
    QuickToolsHub Stylesheet
-   Version: 1.0
+   Version: 2.0 - Simplified
    =================================== */
 
-/* Category Button Styles */
-.category-btn.active {
-    background: linear-gradient(to right, #2563eb, #9333ea);
-    color: white;
+/* ========== Global Styles ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.category-btn:not(.active) {
-    background-color: #f3f4f6;
-    color: #374151;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
-.category-btn:not(.active):hover {
-    background-color: #e5e7eb;
+/* ========== Smooth Scroll ========== */
+html {
+    scroll-behavior: smooth;
 }
 
-/* Tool Card Styles */
-.tool-card {
-    transition: all 0.3s ease;
-}
-
-.tool-card:hover {
-    transform: translateY(-2px);
-}
-
-/* Custom Scrollbar */
+/* ========== Custom Scrollbar ========== */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -45,24 +39,21 @@
     background: linear-gradient(to bottom, #1d4ed8, #7c3aed);
 }
 
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
+/* ========== Tool Card Styles ========== */
+.tool-card {
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-/* Focus Styles for Accessibility */
-button:focus,
-a:focus,
-input:focus {
-    outline: 2px solid #2563eb;
-    outline-offset: 2px;
+.tool-card:hover {
+    transform: translateY(-5px);
 }
 
-/* Loading Animation */
+/* ========== Loading Animation ========== */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -71,28 +62,46 @@ input:focus {
 }
 
 .tool-card {
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Responsive Typography */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
+/* ========== Category Button Styles (if needed in future) ========== */
+.category-btn {
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-/* Print Styles */
-@media print {
-    header,
-    footer,
-    .category-btn {
-        display: none;
-    }
+.category-btn.active {
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    color: white;
 }
 
-/* Utility Classes */
+.category-btn:not(.active) {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.category-btn:not(.active):hover {
+    background-color: #e5e7eb;
+}
+
+/* ========== Accessibility - Focus Styles ========== */
+button:focus,
+a:focus,
+input:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ========== Utility Classes ========== */
 .backdrop-blur {
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .gradient-text {
@@ -102,16 +111,192 @@ input:focus {
     background-clip: text;
 }
 
-/* Hero Section Animations */
+/* ========== Hero Section Animation ========== */
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
+        opacity: 1;
     }
     50% {
         transform: scale(1.05);
+        opacity: 0.9;
     }
 }
 
-.animate-pulse {
-    animation: pulse 2s infinite;
+.animate-pulse-custom {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ========== Badge Styles ========== */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-hot {
+    background-color: #ef4444;
+    color: white;
+}
+
+.badge-new {
+    background-color: #10b981;
+    color: white;
+}
+
+.badge-popular {
+    background-color: #fbbf24;
+    color: #78350f;
+}
+
+.badge-soon {
+    background-color: #f59e0b;
+    color: #78350f;
+}
+
+/* ========== Mobile Menu Animation ========== */
+#mobileMenu {
+    transition: all 0.3s ease-in-out;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .tool-card {
+        padding: 1rem !important;
+    }
+    
+    h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.25rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+    header,
+    footer,
+    .category-btn,
+    button {
+        display: none;
+    }
+    
+    .tool-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* ========== Coming Soon Card Styles ========== */
+.coming-soon-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.coming-soon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        left: 100%;
+    }
+}
+
+/* ========== Link Hover Effects ========== */
+a {
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* ========== Button Styles ========== */
+button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+/* ========== Container Max Width ========== */
+.container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========== Shadow Effects ========== */
+.shadow-custom {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-custom-hover:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== Gradient Backgrounds ========== */
+.gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gradient-success {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* ========== Dark Mode Support (Future) ========== */
+@media (prefers-color-scheme: dark) {
+    /* Dark mode styles can be added here when needed */
+}
+
+/* ========== Performance Optimizations ========== */
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* ========== Prefers Reduced Motion ========== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
